@@ -1,0 +1,54 @@
+---
+title: "Project-2"
+author: "jtang"
+date: "28/04/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Project 2 - Interactive Maps
+
+
+
+```{r cars}
+
+```
+
+### Load packages
+
+You can also embed plots, for example:
+
+```{r pressure, echo=TRUE, warning=FALSE}
+library(leaflet)
+```
+
+### Draw Interactive Maps
+
+```{r, cache=TRUE}
+
+dt_file_url <- 'https://raw.githubusercontent.com/translink/course9-project-2/master/ca.csv'
+dt_file <- 'ca.csv'
+
+download.file(dt_file_url, dt_file)
+
+cities <- read.csv(dt_file, header = TRUE)
+
+head(cities)
+```
+
+
+```{r}
+
+
+r_map <- cities %>% leaflet() %>%
+  addTiles() %>% 
+  addMarkers(lat = ~lat, lng = ~lng, popup = ~city,
+             clusterOptions = markerClusterOptions())
+
+r_map
+
+```
+
