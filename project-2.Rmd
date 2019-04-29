@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Project 2 - Interactive Maps
 
+Use Leaflet R package to create an interactive maps to show all cities in Canada. 
 
 
 ```{r cars}
@@ -25,23 +26,20 @@ You can also embed plots, for example:
 library(leaflet)
 ```
 
-### Draw Interactive Maps
+### Load Geolocation of all cities in Canada
 
 ```{r, cache=TRUE}
 
 dt_file_url <- 'https://raw.githubusercontent.com/translink/course9-project-2/master/ca.csv'
 dt_file <- 'ca.csv'
-
 download.file(dt_file_url, dt_file)
-
 cities <- read.csv(dt_file, header = TRUE)
 
 head(cities)
 ```
 
-
+### Draw Interactive Maps to show all cities in Canada 
 ```{r}
-
 
 r_map <- cities %>% leaflet() %>%
   addTiles() %>% 
