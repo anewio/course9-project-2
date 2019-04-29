@@ -1,7 +1,7 @@
 ---
 title: "Project-2"
 author: "jtang"
-date: "28/04/2019"
+date: "2019-04-28"
 output: html_document
 ---
 
